@@ -6,7 +6,7 @@ When you enter text into an hour of the day and click "save," the text will rema
 You can find the application here: https://richardwalter515.github.io/dayPlanner/
 
 Initial Display:
-![initialdisplay](assets/display.png)
+![initialdisplay](Assets/display.png)
 
 After Entering Events:
-![withevents](assets/withEvents.png)
+![withevents](Assets/withEvents.png)

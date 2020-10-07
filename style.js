@@ -1,3 +1,14 @@
+//display text from local storage
+$('#hourNine').val(localStorage.getItem('hourNine'))
+$('#hourTen').val(localStorage.getItem('hourTen'))
+$('#hourEleven').val(localStorage.getItem('hourEleven'))
+$('#hourTwelve').val(localStorage.getItem('hourTwelve'))
+$('#hourThirteen').val(localStorage.getItem('hourThirteen'))
+$('#hourFourteen').val(localStorage.getItem('hourFourteen'))
+$('#hourFifteen').val(localStorage.getItem('hourFifteen'))
+$('#hourSixteen').val(localStorage.getItem('hourSixteen'))
+$('#hourSeventeen').val(localStorage.getItem('hourSeventeen'))
+
 //display date at top
 var date = moment().format('LL');
 $('#currentDay').html(date);
@@ -8,24 +19,14 @@ console.log('currentHour:', currentHour);
 
 //variables for time block hours
 var nineAm = moment('09:00', 'hh').hour();
-console.log('nineAm:', nineAm);
-console.log(nineAm<currentHour);
 var tenAm =  moment('10:00', 'hh').hour();
-console.log('tenAm:', tenAm)
 var elevenAm = moment('11:00', 'hh').hour();
-console.log('elevenAm:', elevenAm)
 var twelvePm = moment('12:00', 'hh').hour();
-console.log('twelvePm:', twelvePm)
 var onePm = moment('13:00', 'hh').hour();
-console.log('onePm:', onePm)
 var twoPm = moment('14:00', 'hh').hour();
-console.log('twoPm:', twoPm)
 var threePm = moment('15:00', 'hh').hour();
-console.log('threePm:', threePm)
 var fourPm = moment('16:00', 'hh').hour();
-console.log('fourPm:', fourPm)
 var fivePm = moment('17:00', 'hh').hour();
-console.log('fivePm:', fivePm)
 
 $(document).ready(function() {
     //if time block hour > current hour turn green, if time block hour < current hour turn red, else turn grey
@@ -102,7 +103,14 @@ $(document).ready(function() {
     }
 
 
-    //on click of save button, save text info to storage
-        
-    // }
+    //on click of save button, save text info to storage. 
+    $(".saveBtn").on("click", function(event) {
+        var timeClicked = event.target.previousElementSibling.id;
+        console.log('timeClicked:', timeClicked)
+        var enteredText = event.target.previousElementSibling.value;
+        console.log('enteredText:', enteredText)
+    
+        localStorage.setItem(timeClicked, enteredText);
+      });
+      
 });
